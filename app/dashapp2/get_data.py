@@ -42,7 +42,23 @@ def save_sp500_stocks_info():
     dictlist = []
     for index, row in stocks_info_df.iterrows():
         dictlist.append({'value':row['tickers'], 'label':row['labels']})
+
     return dictlist
+
+'''
+def save_stocks_to_csv():
+    import csv
+    csv_columns = ['value', 'label']
+    
+    dict_data = save_sp500_stocks_info()
+    csv_file = "stocks.csv"
+    with open(csv_file, 'w') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+        writer.writeheader()
+        for data in dict_data:
+            writer.writerow(data)
+'''
+#save_stocks_to_csv()
 '''
 # This will keep tickers from russell
 def save_russell_info():
