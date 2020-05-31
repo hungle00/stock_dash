@@ -2,12 +2,12 @@ import dash
 from flask import Flask
 from flask.helpers import get_root_path
 
-from config import BaseConfig
+#from config import BaseConfig
 
 
 def create_app():
     server = Flask(__name__)
-    server.config.from_object(BaseConfig)
+    #server.config.from_object(BaseConfig)
 
     from app.dashapp1.layout import layout as layout1
     from app.dashapp1.callbacks import register_callbacks as register_callbacks1
